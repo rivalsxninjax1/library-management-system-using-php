@@ -15,7 +15,7 @@ foreach ($results as $result) {
 if($result->Status==0)
 {
 echo "<span style='color:red'> Student ID Blocked </span>"."<br />";
-echo "<b>Student Name-</b>" .$result->FullName;
+echo "<b> Student Name" .$result->FullName;
  echo "<script>$('#submit').prop('disabled',true);</script>";
 } else {
 ?>

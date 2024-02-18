@@ -20,11 +20,11 @@ if (isset($_POST['signup'])) {
         chmod($file,0644);
         
         if (file_exists($file)) {
-            $StudentId = generateStudentID($file);
+            $studentid = generateStudentID($file);
         
             $fileHandle = fopen($file, 'a');
             if ($fileHandle) {
-                fputs($fileHandle, $studentId . "\n");
+                fputs($fileHandle, $studentid . "\n");
                 fclose($fileHandle);
                 // echo "Student ID '$studentId' has been written to $file";
             } else {
@@ -54,7 +54,7 @@ if (isset($_POST['signup'])) {
         $status = 1;
         $sql = "INSERT INTO  tblstudents(StudentId,FullName,MobileNumber,EmailId,Password,Status) VALUES(:StudentId,:fname,:mobileno,:email,:password,:status)";
         $query = $dbh->prepare($sql);
-        $query->bindParam(':StudentId', $StudentId, PDO::PARAM_STR);
+        $query->bindParam(':StudentId', $studentid, PDO::PARAM_STR);
         $query->bindParam(':fname', $fname, PDO::PARAM_STR);
         $query->bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
@@ -64,7 +64,7 @@ if (isset($_POST['signup'])) {
         $lastInsertId = $dbh->lastInsertId();
      
         if ($lastInsertId) {
-            echo '<script>alert("Your Registration successfull and your student id is  "+"' . $StudentId . '")</script>';
+            echo '<script>alert("Your Registration successfull and your student id is  "+"' . $studentid . '")</script>';
         } else {
             echo "<script>alert('Something went wrong. Please try again');</script>";
         }
