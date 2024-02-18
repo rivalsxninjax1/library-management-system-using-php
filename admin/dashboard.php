@@ -172,19 +172,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="row">
 
           <div class="col-md-10 col-sm-8 col-xs-12 col-md-offset-1">
@@ -220,12 +207,8 @@ if (strlen($_SESSION['alogin']) == 0) {
               </a>
             </div>
           </div>
-
-
-
-
-
         </div>
+        
 
       </div>
     </div>

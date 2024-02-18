@@ -8,10 +8,10 @@ $_SESSION['alogin']='';
 if(isset($_POST['login']))
 {
  //code for captach verification
-if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
-        echo "<script>alert('Incorrect verification code');</script>" ;
-    } 
-        else {
+// if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
+//         echo "<script>alert('Incorrect verification code');</script>" ;
+//     } 
+//         else {
 
 $username=$_POST['username'];
 $password=md5($_POST['password']);
@@ -29,7 +29,7 @@ echo "<script type='text/javascript'> document.location ='admin/dashboard.php'; 
 echo "<script>alert('Invalid Details');</script>";
 }
 }
-}
+// }
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -79,10 +79,10 @@ echo "<script>alert('Invalid Details');</script>";
 <label>Password</label>
 <input class="form-control" type="password" name="password" autocomplete="off" required />
 </div>
- <div class="form-group">
+ <!-- <div class="form-group">
 <label>Verification code : </label>
 <input type="text"  name="vercode" maxlength="5" autocomplete="off" required style="width: 150px; height: 25px;" />&nbsp;<img src="captcha.php">
-</div>  
+</div>   -->
 
  <button type="submit" name="login" class="btn btn-info">LOGIN </button>
 </form>
@@ -90,10 +90,50 @@ echo "<script>alert('Invalid Details');</script>";
 </div>
 </div>
 </div>  
-<!---LOGIN PABNEL END-->            
+<!---LOGIN PABNEL END-->       
+<!-- added code      -->
+<div class="row">
+
+<div class="col-md-10 col-sm-8 col-xs-12 col-md-offset-1">
+  <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel">
+
+    <div class="carousel-inner">
+      <div class="item active">
+
+        <img src="admin/assets/img/1.jpg" alt="" />
+
+      </div>
+      <div class="item">
+        <img src="admin/assets/img/2.jpg" alt="" />
+
+      </div>
+      <div class="item">
+        <img src="admin/assets/img/3.jpg" alt="" />
+
+      </div>
+    </div>
+    <!--INDICATORS-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example" data-slide-to="1"></li>
+      <li data-target="#carousel-example" data-slide-to="2"></li>
+    </ol>
+    <!--PREVIUS-NEXT BUTTONS-->
+    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+</div>
              
  
-    </div>
+    
+<!-- added code      -->
+
+</div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->
  <?php include('includes/footer.php');?>

@@ -6,9 +6,9 @@ include('includes/config.php');
 error_reporting(0);
 if (isset($_POST['signup'])) {
     //code for captach verification
-    if ($_POST["vercode"] != $_SESSION["vercode"] or $_SESSION["vercode"] == '') {
-        echo "<script>alert('Incorrect verification code');</script>";
-    } else {
+    // if ($_POST["vercode"] != $_SESSION["vercode"] or $_SESSION["vercode"] == '') {
+    //     echo "<script>alert('Incorrect verification code');</script>";
+    // } else {
        
         function generateStudentID($file) {
             $studentCount = count(file($file));
@@ -69,7 +69,7 @@ if (isset($_POST['signup'])) {
             echo "<script>alert('Something went wrong. Please try again');</script>";
         }
     }
-}
+// }
 ?>
 
 <!DOCTYPE html>
@@ -173,11 +173,11 @@ if (isset($_POST['signup'])) {
                                     <input class="form-control" type="password" name="confirmpassword"
                                         autocomplete="off" required />
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Verification code : </label>
                                     <input type="text" name="vercode" maxlength="5" autocomplete="off" required
                                         style="width: 150px; height: 25px;" />&nbsp;<img src="captcha.php">
-                                </div>
+                                </div> -->
                                 <button type="submit" name="signup" class="btn btn-danger" id="submit">Register Now
                                 </button>
 

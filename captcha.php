@@ -11,3 +11,5 @@ $font_size = 14;
 imagestring($image_p, $font_size, 5, 5, $text, $white); 
 imagejpeg($image_p, null, 80); 
 ?>
+
+<!-- this file has been commented because of technical issues in some browser works fine on some browsers -->
